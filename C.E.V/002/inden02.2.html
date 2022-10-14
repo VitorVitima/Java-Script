@@ -10,10 +10,20 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dolorum quos, temporibus illum error accusamus quas modi eius blanditiis doloribus magni. Distinctio, quam architecto omnis commodi aliquam ratione ab blanditiis enim nisi numquam possimus voluptates nam esse! Dolores, laborum natus.</p>
 
     <script>
-        var n1 = Number.parseInt (window.prompt('Escolha um número: '))
-        var n2 = Number.parseInt (window.prompt('Escolha outro número: '))
-        var soma = n1 + n2
-                alert(soma)
+        var n1 = Number(window.prompt('Escolha um número inteiro: ')) //Recebe 7
+        var n2 = Number(window.prompt('Escolha um número real: ')) //Recebe 1.9
+
+            var soma = n1 + n2 // recebe 8.9
+                window.alert('A soma dos dois números é igual a ' + soma) 
+
+        var n1_1 = Number(prompt('Outro número ai: ')) //recebe 10
+        var n1_2 = Number(prompt('Mais um: ')) // recebe 25
+
+            var soma1 = n1_1 + n1_2 //recebe 35
+                soma.toString()
+                String(soma1)
+
+                    window.alert('A soma primeira soma e a segunda são: ' + soma + soma1)
     </script>
 </body>
 </html>
