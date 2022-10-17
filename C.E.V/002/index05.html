@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            background-color: #c45ec4;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 45px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var pala1, pala2, soma1, soma2
+            pala1 = window.prompt('Escreve uma palavra: ')
+            pala2 = window.prompt('Escreve outra palavra: ')
+
+                soma1 = pala1 + pala2
+                soma2 = pala1.length + pala2.length
+
+        document.write(`A primeira palavra é ${pala1} e ela tem ${pala1.length} letras <br>
+                        A segunda palavra é ${pala2} e ela tem ${pala2.length} letras <br>`)
+        document.write(`A soma das duas palavras é igual a: ${soma1} <br>
+                        A soma da quantidade de letras das duas palavras é: ${soma2}`)
+    </script>
+</body>
+</html>
