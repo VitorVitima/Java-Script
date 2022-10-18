@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#bloco {
+            background-color: #8a428a;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-family: arial;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="bloco" onmouseout="saiu()">
+        Interaja...
+    </div>
+
+    <script>
+        var textoEsta = document.querySelector('div#bloco')
+        textoEsta.addEventListener('click', interacao)
+        textoEsta.addEventListener('mouseenter', entrou)
+
+
+        function interacao() {
+            textoEsta.innerText = "clicou"
+        }
+        function entrou() {
+            textoEsta.innerText = "Enctrou"
+        }
+        function saiu() {
+            textoEsta.innerText = "Volta 😢"
+        }
+    </script>
+</body>
+</html>

@@ -14,14 +14,24 @@
 </head>
 <body>
     <h1>Não sei o que escrever</h1>
-    <p>Aqui vai o resultado</p>
-    <p>Trabalhando com <strong>DOM</strong> em JavaScript</p>
-    <div>Clique em mim</div>
+    <p class="para">Aqui vai o resultado</p>
+    <p class="st">Trabalhando com DOM em JavaScript </p>
+    <p class="st">Esta no plural, então usa um [n] e muda para ALL</p>
+    <div id="dav">Clique em mim</div>
         <hr>
     <script>
-        var p1 = document.getElementsByTagName ('p') [0]
+        var p1 = document.querySelector ('p.para')
+        document.querySelector ('p.para').style.backgroundColor = 'yellow'
+        p1.style.fontSize = '40px'
 
-        window.document.write (p1.innerText)
+         var  c = document.querySelectorAll('p.st') [1]
+         c.style.margin = '20px 90px'
+
+        var d = document.querySelector ('div#dav')
+        d.style.fontFamily = 'times'
+        d.style.fontSize = '30px'
+        document.querySelector ('div#dav').style.color = 'white'
+
     </script>
 </body>
 </html>
