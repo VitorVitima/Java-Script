@@ -5,13 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 50px;
+            border-radius: 10px;
+            box-shadow: 4px 5px 10px 0px #00000057;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        input {
+            width: 150px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Soma de números</h1>
-    <input type="number" name="number1" id="number1">
-    <input type="number" name="number2" id="number2">
-    <input type="submit" value="Somar" onclick="botao()">
-    <div id="resultado">Resultado</div>
+    <main>
+        <section>
+            <h1>Soma de números</h1>
+                <div #inputs>
+                    <input type="text" name="number1" id="number1">
+                    <input type="text" name="number2" id="number2">
+                </div>
+                <input type="submit" value="Somar" onclick="botao()">
+            <div id="resultado">Resultado</div>
+        </section>
+    </main>
 
     <script>
         
@@ -25,7 +65,7 @@
             var n1 = Number(tn1.value)
             var n2 = Number(tn2.value)
             var result = n1 + n2
-               resultado.innerHTML = result
+               resultado.innerHTML = `O resultado da soma de ${n1} + ${n2} é iagual a ${result}`
 
         }
 
