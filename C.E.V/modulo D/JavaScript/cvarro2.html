@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="inputs">
+            <h1>Será que você vai ser multado</h1>
+            <label for="inumber">Qual foi sua velocidade? </label>
+            <input type="number" name="number" id="inumber">
+            <input type="button" value="Revisar" onclick="botao()">
+            <div id="resposta">Resultado</div>
+        </section>
+    </main>
+
+    <script>
+        function botao() {
+            
+	        var inputText = document.querySelector('input#inumber').value
+            var inputNumber = Number(inputText)
+            var divResposta = document.querySelector('div#resposta')
+	        
+            if (inputNumber > 59) {
+                divResposta.innerHTML = `Sua velocidade foi <strong>${inputNumber}km/h<strong>, você foi multado.`
+            }else {
+                divResposta.innerHTML = `Sua velocidade foi <strong>${inputNumber}km/h</strong>, você não foi multado.`
+            }
+
+}
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continente</title>
+    <style>
+        * {
+            font-family: arial;
+            margin: 0px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 600px;
+            height: 100vh;
+        }
+        section {
+            background-color: #ecfd00;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px #00000062;
+            width: 400px;
+            padding: 20px;     
+            text-align: center;       
+        }
+        body {
+            background-color: #ecfd00;
+
+        }
+        select {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Será que estamos próximos</h1>
+            <div id="interacao">
+                <label for="continente">Qual seu continente: </label>
+                <select name="cont" id="continente">
+                    <option value="América">América</option>
+                    <option value="África">África</option>
+                    <option value="Europa">Europa</option>
+                    <option value="Ásia">Ásia</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+                <input type="submit" value="Revisar" onclick="botao()">
+            </div>
+            <div id="resultado">Resultado</div>
+        </section>
+    </main>
+    <script>
+        function botao() {
+	        var selectContinente = document.querySelector('#continente')
+	        var divResultado = document.querySelector('#resultado')
+            var contiString = selectContinente.value
+
+            if (contiString == 'América') {
+                divResultado.innerHTML = `Você mora na <strong>${contiString}</strong>, a gente mora, relativamente, perto.`
+            } else {
+                divResultado.innerHTML = `Você mora na <strong>${contiString}</strong>, não estamos próximos.`
+            }
+
+}
+    </script>
+</body>
+</html>
