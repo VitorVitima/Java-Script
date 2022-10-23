@@ -5,18 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            font-family: arial;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #f5c699;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section {
+            border-radius: 10px;
+            background-color: white;
+            width: 650px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0px;
+            box-shadow: 5px 5px 10px #00000057 ;
+        }
+        h2, h1 {
+            margin: 10px 0px;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 0px 0px 10px 0px;
+        }
+        #noite, #tarde {
+            display: none;
+        }
+        footer {
+            margin: 15px 0px;
+            
+        }
+        footer > a{
+            color: black;
+            text-decoration: none;
+        }
+        footer > a:hover {
+            text-decoration: underline;
+            color: #111157;
+        }
+    </style>
 </head>
-<body>
-    <header>
+<body id="body">
+    <header id="header">
         <h1>Hora do Dia</h1>
     </header>
     <main>
         <section>
-            
+            <h2>Agora são <span id="horas">XX</span> horas.</h2>
+            <img id="manha" src="https://media-cdn.tripadvisor.com/media/photo-s/06/08/3b/5a/hotel-dan-inn.jpg" alt="imagem manhâ">
+            <img id="tarde" src="https://live.staticflickr.com/2073/2175774008_738039ea64_b.jpg" alt="imagem tarde">
+            <img id="noite" src="https://roteirobaby.com.br/wp-content/uploads/2018/05/noitenasestrelas6.png" alt="imagem noite">
         </section>
     </main>
     <footer>
-
+        <a id="link" href="https://twitter.com/VVitima" target="_blank">@VVitima</a>
     </footer>
+
+    <script>
+        var data = new Date()
+        var hora = data.getHours()
+        var text = document.querySelector('#horas')
+        text.innerHTML = hora
+
+        if (hora > 5 && hora < 12){
+            //  Manhã
+            document.querySelector('#body').style.backgroundColor = '#f5c699'
+        }else if (hora > 12 && hora < 18){
+            document.querySelector('#body').style.backgroundColor = '#8eb9eb'
+            
+            document.querySelector('#manha').style.display = 'none'
+            document.querySelector('#tarde').style.display = 'block'
+        }else {
+            document.querySelector('#header').style.color = 'white'
+            document.querySelector('#link').style.color = 'white'
+            document.querySelector('#body').style.backgroundColor = '#424242'
+            document.querySelector('#manha').style.display = 'none'
+            document.querySelector('#noite').style.display = 'block'
+            document.querySelector('#link').addEventListener ('mouseenter', enter)
+            document.querySelector('#link').addEventListener('mouseout', sair)
+            function enter(){
+                document.querySelector('#link').style.color = '#7b7bcf'
+            }
+            function sair(){
+                document.querySelector('#link').style.color = 'white'
+            }
+        }
+    </script>
 </body>
 </html>
