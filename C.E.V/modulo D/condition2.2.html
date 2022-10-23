@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        body {
+            width:100vw ;
+            height: 100vh;
+            background-color: #fbff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            background-color: aliceblue;
+            border: 1px solid black;
+            padding: 50px;
+            box-shadow: 0px 0px 10px #0000008e;
+            border-radius: 20px;
+            font-style: normal;
+            font-size: 25px;
+
+        }
+    
+    </style>
+</head>
+<body>
+    <main>
+        <div id="textDiv"><!--Text Good--></div>
+    </main>
+
+    <script>
+            var data = new Date()
+            var horario = data.getHours()
+            var textDiv = document.querySelector ('#textDiv')
+
+                if ( horario >= 12 && horario <= 18 ) {
+                    textDiv.innerHTML = `São ${horario}h, tenha uma boa tarde`
+                }
+                else if ( horario > 18 && horario < 24){
+                    textDiv.innerHTML = `São ${horario}h, tenha uma boa noite.`
+                        
+                }
+                else if ( horario == 24 || horario <= 4) {
+                    textDiv.innerHTML = `São ${horario}h, tenha uma boa madrugada`
+                }
+                else if ( horario > 4 && horario < 12){
+                    textDiv.innerHTML = `São ${horario}h, tenha uma boa manhã.`
+                }
+    </script>
+</body>
+</html>

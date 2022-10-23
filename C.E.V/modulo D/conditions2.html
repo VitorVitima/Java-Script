@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+            width: 400px;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main {
+            padding: 20px;
+            box-shadow: 0px 0px 5px #0000003b;
+            border-radius: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <label for="idade">Idade: </label>
+        <input type="number" name="dade" id="idade">
+        <input type="submit" value="???" onclick="botao()">
+        <div id="textDiv"><!-- Texto --></div>
+    </main>
+
+    <script>
+        var idade = document.querySelector('#idade')
+        
+        function botao() {
+            var idadeNumber = Number(idade.value)
+            var textDiv = document.querySelector('#textDiv')
+
+                if (idadeNumber < 16){
+                    textDiv.innerHTML = 'Você é muito pequeno, não pode votar.'
+                } 
+                else if (idadeNumber < 18 || idadeNumber > 65) {
+                    textDiv.innerHTML = `Você pode votar, mas não é obrigatório.`
+                } 
+                else {
+                    textDiv.innerHTML = `Você pode votar e seu voto é obrigatório.`
+                }
+        }
+    </script>
+</body>
+</html>

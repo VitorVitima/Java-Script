@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: arial;
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            width: 40vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="text"><!--Text--></div>
+    </main>
+
+    <script>
+        var data = new Date()
+        var diaDaSemana = data.getDay()
+        var textDiv = document.querySelector('#text')
+        /*  
+          0 = Domingo
+          1 = Segunda
+          2 = Terça
+          3 = Quarta
+          4 = Quinta
+          5 = Sexta
+          6 = Sabado
+        */
+        switch (diaDaSemana){
+            case 0:
+                textDiv.innerHTML = `<strong>domingo</strong>`
+                break
+            case 1:
+                textDiv.innerHTML = `<strong>Segunda</strong>`
+                break
+            case 2:
+                textDiv.innerHTML = `Terça`
+                break
+            case 3:
+                textDiv.innerHTML = `Quarta`
+                break
+            case 4:
+                textDiv.innerHTML = `Quinta`
+                break
+            case 5:
+                textDiv.innerHTML = `Sexta`
+                break
+            case 6:
+                textDiv.innerHTML = `Sábado`
+                break
+            default:
+                textDiv.innerHTML = `[ERRO] Valor invalido.`
+                break
+        }
+
+    </script>
+</body>
+</html>
