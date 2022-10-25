@@ -1,99 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificador de idade</title>
-    <style>
-        *{
-            padding: 0px;
-            margin: 0px;
-            font-family: arial;
-        }
-        body {
-            width: 98vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #aa85e4;
-        }
-        h1 {
-            margin: 20px 0px 10px 0px;
-        }
-        main {
-            background-color: white;
-            width: 500px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 5px #00000033;
-        }
-        input {
-            margin: 10px 5px;
-        }
-        input#validar {
-            padding: 0.5px 20px;
-            margin: 10px 0px;
-            border-radius: 4px;
-            border: 1px solid black;
-        }
-        input#validar:hover {
-            background-color: #a985e47c;
-            transition-delay: 0.5s;
-            transition-duration: 0.2s;
-            box-shadow: 0px 0px 3px #0000003b;
-        }
-        input#iano {
-            width: 140px;
-            padding: 0px 5px;
-            border-radius: 10px;
-            border: 1.5px solid black;
-            box-shadow: 0px 0px 2px #0000004d;
-        }
-        p#p {
-            text-align: center;
-            margin: 10px 0px 20px 0px;
-        }
-        #imagens {
-            display: flex;
-            justify-content: center;
-        }
-        img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            display: none;
-        }
-        footer {
-            margin: 15px 0px;
-        }
-        footer a {
-            color: black;
-            text-decoration: none;
-        }
-        footer a:hover {
-            color: whitesmoke;
-            transition-delay: 0.08s;
-            transition-duration: 0.2s;
-        }
-    </style>
+    <link rel="stylesheet" href="styleForAll.css" media="screen">
+    <link rel="stylesheet" href="mediaQuery.css" media="screen">
 </head>
 <body>  
     <header>
         <h1>Verificador de idade</h1>
     </header>
     <main>
-        <section>
-            <label for="iano">Data de nascimento: </label>
+        <section id="conteudo">
+            <label id="dataN" for="iano">Data de nascimento </label>
             <input type="number" name="ano" id="iano" min="1900"> <br>
-            <p style="display:inline;">Sexo: </p>
+            
 
-            <label for="homen">Masculino</label>
-            <input type="radio" name="sex" id="homen" checked>
-
-            <label for="mulher">Feminino</label>
-            <input type="radio" name="sex" id="mulher"> <br>
+            <div id="masculinoEFeminino">
+                <p id="sexo">Sexo </p>
+                <div id="inputs">
+                    <label for="homen">Masculino</label>
+                    <input type="radio" name="sex" id="homen" checked>
+                    <label for="mulher">Feminino</label>
+                    <input type="radio" name="sex" id="mulher"> <br>
+                </div>
+            </div>
 
             <input id="validar" type="submit" value="Validar" onclick="botao()">
             <p id="p">Preencha os elemetos acima</p>

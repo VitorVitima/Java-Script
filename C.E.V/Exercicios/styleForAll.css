@@ -1,0 +1,86 @@
+@charset "UTF-8";
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: arial;
+}
+body {
+    background-color: #aa85e4;
+}
+header {
+    text-align: center;
+}
+h1 {
+    margin: 20px 0px 10px 0px;
+}
+main {
+    background-color: white;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #00000033;
+    margin: auto;
+}
+#masculinoEFeminino {
+    display: flex;
+    
+}
+#inputs {
+    margin-top: -8px;
+    margin-left: 5px;
+}
+#sexo::after {
+    content:':';
+}
+
+input {
+    margin: 10px 5px;
+}
+input#validar {
+    padding: 0.5px 20px;
+    margin: 10px 0px;
+    border-radius: 4px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+input#validar:hover {
+    background-color: #a985e47c;
+    transition-delay: 0.5s;
+    transition-duration: 0.2s;
+    box-shadow: 0px 0px 3px #0000003b;
+}
+input#iano {
+    width: 140px;
+    padding: 0px 5px;
+    border-radius: 10px;
+    border: 1.5px solid black;
+    box-shadow: 0px 0px 2px #0000004d;
+}
+p#p {
+    text-align: center;
+    margin: 10px 0px 20px 0px;
+}
+#imagens {
+    display: flex;
+    justify-content: center;
+}
+img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: none;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px;
+}
+footer a {
+    color: black;
+    text-decoration: none;
+}
+footer a:hover {
+    color: whitesmoke;
+    transition-delay: 0.08s;
+    transition-duration: 0.2s;
+}
