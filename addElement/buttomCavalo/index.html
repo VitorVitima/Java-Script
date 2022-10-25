@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            background-color: #3b395a;
+        }
+        img {
+            width: 300px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <main id="conteudo">
+
+    </main>
+
+    <script>
+        var main =  document.querySelector('#conteudo')
+        var imagem = document.createElement('img')
+        imagem.src = 'https://www.comprerural.com/wp-content/uploads/2017/07/Cavalos-1-640x426.jpg'
+
+        main.insertAdjacentElement('beforeend', imagem)
+        
+    </script>
+</body>
+</html>
