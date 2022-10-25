@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verificador de idade</title>
     <style>
         *{
             padding: 0px;
@@ -27,12 +27,29 @@
             width: 500px;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 5px 5px 5px #00000033;
         }
         input {
-            margin: 10px 0px;
+            margin: 10px 5px;
         }
         input#validar {
-            padding: 0px 10px;
+            padding: 0.5px 20px;
+            margin: 10px 0px;
+            border-radius: 4px;
+            border: 1px solid black;
+        }
+        input#validar:hover {
+            background-color: #a985e47c;
+            transition-delay: 0.5s;
+            transition-duration: 0.2s;
+            box-shadow: 0px 0px 3px #0000003b;
+        }
+        input#iano {
+            width: 140px;
+            padding: 0px 5px;
+            border-radius: 10px;
+            border: 1.5px solid black;
+            box-shadow: 0px 0px 2px #0000004d;
         }
         p#p {
             text-align: center;
@@ -50,6 +67,15 @@
         footer {
             margin: 15px 0px;
         }
+        footer a {
+            color: black;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: whitesmoke;
+            transition-delay: 0.08s;
+            transition-duration: 0.2s;
+        }
     </style>
 </head>
 <body>  
@@ -63,7 +89,7 @@
             <p style="display:inline;">Sexo: </p>
 
             <label for="homen">Masculino</label>
-            <input type="radio" name="sex" id="homen">
+            <input type="radio" name="sex" id="homen" checked>
 
             <label for="mulher">Feminino</label>
             <input type="radio" name="sex" id="mulher"> <br>
@@ -72,9 +98,7 @@
             <p id="p">Preencha os elemetos acima</p>
         </section>
         <section id="imagens">
-            <img id="kidHomem" src="https://images-americanas.b2w.io/produtos/3387264042/imagens/crianca-pequena-bebe-crianca-menino-menina-impressao-padrao-balde-chapeu-chapeu-bone/3387264085_1_large.jpg" alt="">
-            <img id="adultoHomem" src="https://i.pinimg.com/564x/03/20/06/0320067f91f1b489636ee2233de895dc--hipster-beard-beard-care.jpg" alt="">
-            <img id="velhoHomem" src="https://m.media-amazon.com/images/I/51cufHt6PHL._SL500_.jpg" alt="">
+            <img id="img" src="#" alt="#">
         </section>
             
 
@@ -82,25 +106,57 @@
     <footer>
         <a href="https://twitter.com/VVitima">@VVitima</a>
     </footer>
+
+
     <script>
-        var sexoH = document.querySelector('#homen')
-        var sexoM = document.querySelector('#mulher')
         function botao() {
             var dataNText = document.querySelector('#iano').value
             var dataN = Number(dataNText)
-
             var newData = new Date()
             var dataDHoje = newData.getFullYear() - dataN
-            var idade = dataDHoje
 
-            
-
-            document.querySelector('#p').innerHTML = `XXX de ${idade} anos`
-
-            if (idade < 0){
+            if (dataDHoje < 0 || dataNText.length == 0){
                 window.alert('Verifique os dados e tente novamente!!!')
-            }
-        
+            } else {
+
+                var p = document.querySelector('#p')
+                var sex = document.getElementsByName('sex')
+                var sexo = " "
+                var imagem = document.querySelector('#img')
+
+                    if (sex[0].checked){
+                        sexo = 'Homem'
+                    } else if (sex[1].checked){
+                        sexo = 'Mulher'
+                    }
+                    p.innerText = `${sexo} de ${dataDHoje} anos.`
+
+                        if (sexo == 'Homem') {
+                            imagem.style.display = 'block'
+                            if (dataDHoje < 10){
+                                //Criança
+                                imagem.src = 'imagens/menininhoEdited.jpg'
+                            } else if (dataDHoje < 40 && dataDHoje > 10){
+                                //adulto
+                                imagem.src = 'imagens/homemEdited.jpg'
+                            } else if (dataDHoje > 40){
+                                imagem.src = 'imagens/homemVelhoEdited.jpg'
+                                //velhin
+                            }
+                        } else if (sexo == 'Mulher'){
+                            imagem.style.display = 'block'
+                            if (dataDHoje < 10){
+                                //Criança
+                                imagem.src = 'imagens/meninaEdited.jpg'
+                            } else if (dataDHoje < 40 && dataDHoje > 10){
+                                imagem.src = 'imagens/mulherEdited.jpg'
+                                //adulto
+                            } else if (dataDHoje > 40){
+                                imagem.src = 'imagens/mulherVelhaEdited.jpg'
+                                //velhin
+                            }
+                        }
+                }
         }
     </script>
 </body>
