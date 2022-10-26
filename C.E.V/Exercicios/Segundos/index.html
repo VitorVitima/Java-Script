@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            color: #292929;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: #FC8DCA;
+        }
+        header {
+            text-align: center;
+            margin: 10px 0px 15px 0px;
+        }
+        main {
+            margin: auto;
+            width: 350px;
+            padding: 15px 20px;
+            background-color: #AAECFC;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-radius: 10px;
+        }
+        input {
+            margin: 0px 0px 20px 0px;
+            padding: 1px 0px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+        }
+        input#submit {
+            padding: 4px 0px;
+            width: 70px;
+        }
+        input#submit:hover {
+            background-color: #fcfcfc;
+            transition-delay: 0.2s;
+            transition-duration: 0.4s;
+        }
+        label::after{
+            content: ':';
+        }
+        footer {
+            text-align: center;
+            margin: 10px 0px;
+        }
+        footer a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sistema de contagem</h1>
+    </header>
+    <main>
+        <label for="inicio">Número inicial</label>
+        <input type="number" id="inicio">
+        
+        <label for="final">Número final</label>
+        <input type="number" id="final">
+        
+        <label for="intervalo">Intervalo entre eles</label>
+        <input type="number" id="intervalo">
+        
+        <input type="submit" id="submit" value="Enviar">
+
+        <div id="divText"><!--Text--></div>
+    </main>
+    <footer>
+        <a href="https://twitter.com/VVitima" target="_blank">@VVitima</a>
+    </footer>
+    <script>
+    
+    </script>
+</body>
+</html>
