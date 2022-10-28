@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --cor1:#023E73;
+            --cor2:#024059;
+            --cor3:#BF6415;
+            --cor4:#D9CCC1;
+            --cor5:#8C503A;
+        }
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color:var(--cor3) ;
+        }
+        main{
+            margin: 15% 2%;
+            color: var(--cor4);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <label for="letra">Escreve uma palavra: </label>        
+        <input type="text" id="letra">
+        <input type="button" value="Dar uma olhada" onclick="botao()">
+    </main>
+    <script>
+        function botao() {
+	    var div = document.createElement('div')
+        var main = document.querySelector('main')
+        var palavra = document.querySelector('#letra').value
+        var letraPalavra = palavra.length
+        div.innerHTML = `A palavra <strong>${palavra}</strong> tem ${letraPalavra} letras.`
+        main.insertAdjacentElement('beforeend', div)
+    }
+
+    </script>
+</body>
+</html>

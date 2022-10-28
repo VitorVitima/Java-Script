@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #D9A577;
+        }
+        main {
+            background-color: #594D42;
+            max-width: 270px;
+            min-height: 100px ;
+            margin: 20% 20px;
+            padding: 10px 20px;
+            color: #F2B680;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #0000002f;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <label for="inicio">Número </label>
+        <input type="number" id="inicio" required>
+        <input type="button" value="Vê" onclick="botao()">
+
+    </main>
+    <script>
+        function botao(){
+            var numeroText = document.querySelector('#inicio').value
+            var div = document.createElement('div')
+            var main = document.querySelector('main')
+            var numero = Number(numeroText)
+
+            for (var c = 0; c <= numero ; c++) {
+        	div.innerHTML += ` ${c}`
+        }
+
+            main.insertAdjacentElement('beforeend', div)
+        }
+    </script>
+</body>
+</html>
