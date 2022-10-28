@@ -87,13 +87,13 @@
         <section id="all">
             <article>
                 <label for="inicio">Número inicial</label>
-                <input type="number" id="inicio">
+                <input type="number" id="inicio" required>
                 
                 <label for="final">Número final</label>
-                <input type="number" id="final">
+                <input type="number" required id="final">
                 
                 <label for="intervalo">Intervalo entre eles</label>
-                <input type="number" id="intervalo">
+                <input type="number" id="intervalo" required>
                 
                 <input type="submit" id="submit" value="Enviar" onclick="botao()">
             </article>
@@ -118,15 +118,22 @@
             var final = Number(finalText)
             var intervalo = Number(intervaloText)
 
+            var texts2 = document.createElement('span')
 
-            while(inicio <= final){
-                var texts = document.createElement('span')
-                texts.innerHTML = `${inicio}  &#x1F449;`
-                divText.insertAdjacentElement("beforeend", texts)
-                inicio = inicio + intervalo
+
+            if (inicio <= final && intervalo > 0) {
+                while(inicio <= final) {
+                    var texts = document.createElement('span')
+                    texts.innerHTML = `${inicio}  &#x1F449;`
+                    divText.insertAdjacentElement("beforeend", texts)
+                    inicio = inicio + intervalo
+                }
+                texts2.innerHTML = ` <strong>Acabou!!</strong>`
+                divText.insertAdjacentElement('beforeend', texts2)
+            } else {
+                window.alert('Dados invalidos!!!')
             }
-            texts.innerHTML = ` <strong>Acabou!!</strong>`
-            divText.insertAdjacentElement('beforeend', texts)
+            
         }
     </script>
 </body>
