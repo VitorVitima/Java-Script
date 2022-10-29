@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #4b4949;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var n1 = 3
+        var arrai=[]
+        for (var valor = 0 ; valor < 5 ; valor++){
+            //arrai[valor] += n1 ** valor
+            arrai.push(valor+n1)
+            n1++
+        }
+        for (var key in arrai){
+            console.log(`A chave ${key} contem o valor ${arrai[key]}`)
+        }
+    </script>
+</body>
+</html>

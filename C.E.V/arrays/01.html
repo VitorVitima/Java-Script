@@ -17,13 +17,15 @@
         let textWithArrays = [2, 3, 1, 77, "lol"]
         console.log(textWithArrays)
         console.log(`O array tem ${textWithArrays.length} contents atribuidos`)
-        textWithArrays.push(1) // push é usado para colocar um elemento na ultima possição, sem precisar saber qual é
         console.log('----------------')
+        textWithArrays.push(1) // push é usado para colocar um elemento na ultima possição, sem precisar saber qual é
         console.log(`Agora o array tem ${textWithArrays.length} elements`)
         console.log(textWithArrays)
         console.log('----------------')
-        console.log(textWithArrays.sort())
-
+        textWithArrays.push(false)
+        textWithArrays.sort() // usado para organizar os elementos de forma crescente
+        console.log(textWithArrays)
+     
     </script>
 </body>
 </html>
