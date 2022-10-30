@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            background-color: #645757;
+        }
+        main {
+            background-color: whitesmoke;
+            height: 200px;
+            width: fit-content;
+            padding: 20px 10px;
+            margin-top: 10%;
+            margin-left: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <main>
+        <label for="numero">Escolha um número: </label>
+        <input type="number" name="numero" id="numero">
+        <input type="submit" value="Testar" onclick="botao()"> <br>
+    </main>
+
+    <script>
+        function botao() {
+	        var text = document.createElement('span')
+	        var main = document.querySelector('main')
+	        var numberText = document.querySelector('#numero').value
+	        function parOuImpa (numero=9){
+	            if (numero%2 == 0){
+	                return 'par'
+	            } else if (numero%2 != 0) {
+	                return 'ímpar'
+	            }
+	        }
+            
+	        var parOuImpar = parOuImpa(Number(numberText))
+	        text.innerHTML = `O número <strong>${numberText}</strong> é <strong>${parOuImpar}</strong>`
+            
+	        main.insertAdjacentElement('beforeend', text)
+}
+    </script>
+</body>
+</html>
