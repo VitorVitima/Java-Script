@@ -67,13 +67,14 @@
             <article id="inputs">
                 <label for="number">Escolha um número:</label>
                 <input type="number" id="number">
-                <input type="submit" value="Salvar" onclick="botao1()">
+                <input type="submit" value="Salvar" onclick="salvar()">
             </article>
             <article id="valores">
 
             </article>
-            <article id="botao02">
-                <input type="submit" value="Validar" onclick="botao2()">
+            <input type="submit" value="Validar" onclick="validar()">
+            <article id="validarValores">
+                
             </article>
         </section>
     </main>
@@ -81,26 +82,6 @@
         <a target="_blank" href="https://twitter.com/VVitima">@VVitima</a>
     </footer>
 
-    <script>
-        
-        function botao1(){
-            var numberText = document.querySelector('#number').value        
-            var number = Number(numberText)
-            var boxArray = []
-            var article = document.querySelector('#valores')
-            boxArray.push(number)
-
-            for (var k = 0 ; k < boxArray.length; k++){
-                var span = document.createElement('span')
-                span.innerHTML = `Número <strong>${boxArray[k]}</strong> adicionado`
-                article.insertAdjacentElement('beforeend', span)    
-            }
-                
-        }        
-
-
-
-        
-    </script>
+    <script src="js.js"></script>
 </body>
 </html>
