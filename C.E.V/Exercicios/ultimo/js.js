@@ -14,6 +14,7 @@ function numeroRepe(n){
 
 function salvar(){
     
+    
     if (numeroRepe(Number(inputNumber.value)) ){
         window.alert('numero ja foi')
     } else {
@@ -21,10 +22,12 @@ function salvar(){
         valoresSalvos.push(Number(inputNumber.value))
         for(var k = 0 ; k < valoresSalvos.length ; k++){
             var span = document.createElement('span')
-            span.innerHTML = valoresSalvos[k]
+            span.innerHTML = `O valor <strong>${valoresSalvos[k]}</strong> foi adicionado.`
         }
         boxValores.insertAdjacentElement('beforeend', span)
     }
+    inputNumber.value = ""
+    inputNumber.focus()
 }
 function temOuNao(){
     if (valoresSalvos.length == 0){
